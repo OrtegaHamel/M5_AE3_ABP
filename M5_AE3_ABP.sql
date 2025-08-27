@@ -1,3 +1,4 @@
+-- Crear la base de datos y usarla
 CREATE DATABASE IF NOT EXISTS `restaurant_db`;
 USE `restaurant_db`;
 
@@ -47,7 +48,7 @@ LEFT JOIN pedidos p ON c.id = p.cliente_id; -- Incluir clientes sin pedidos
 -- Proyectar todos los pedidos realizados por un cliente específico 
 SELECT p.id AS pedido_id, p.fecha, p.total
 FROM pedidos p
-WHERE p.cliente_id = 1; -- Filtrar por el cliente específico
+WHERE p.cliente_id = 1; -- Filtra por el cliente específico
 
 -- Calcular el total de todos los pedidos para cada cliente
 SELECT c.id AS cliente_id, c.nombre, SUM(p.total) AS total_pedidos
